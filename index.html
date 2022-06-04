@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/main.js" defer></script>
+    <meta charset="UTF-8">
+    <title>SketchSearch</title>
+</head>
+
+<body onload="init()">
+    <h1>Sketch Search</h1>
+    <h2>Skearch?</h2>
+    <br>
+    <input type="button" value="Save" id="btn" size="30" onclick="save()">
+    <input type="button" value="Clear" id="clr" size="23" onclick="erase()">
+    <br>
+    <canvas id="canvas" width="400" height="400" style="border:8px solid;"></canvas>
+    <br>
+    <img id="canvasimg" style="display:none;">
+    
+</body>
+
+</html>
