@@ -1,10 +1,16 @@
 const canvas = document.getElementById("canvas")
-const canvasImg = document.getElementById("canvasimg")
+const canvasImg = document.getElementById("canvas img")
+const labelSelect = document.getElementById("label select")
 
 async function postImage() {
+  // var value = labelSelect.name
+  // console.log(value)
+  var label = labelSelect.options[labelSelect.selectedIndex].value;
+  console.log(label);
   let data = {
-    Image: canvasImg.src
-  }
+    Image: canvasImg.src,
+    Label: label
+  };
 
   try {
     const response = await fetch('/app/API/save_image', { //send png to backend
@@ -66,15 +72,14 @@ function draw() {
 }
 
 function erase() {
-  var m = confirm("Would you like to clear the canvas?");
-  if (m) {
+  // var m = confirm("Would you like to clear the canvas?");
+  // if (m) {
       ctx.clearRect(0, 0, w, h);
-      document.getElementById("canvasimg").style.display = "none";
-  }
+     canvasImg.style.display = "none";
+  // }
 }
 
 function save() {
-  var canvasImg = document.getElementById("canvasimg")
   canvasImg.style.border = "8px solid";
   var dataURL = canvas.toDataURL()
   canvasImg.src = dataURL;

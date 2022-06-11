@@ -9,16 +9,40 @@
 </head>
 
 <body onload="init()">
-    <h1>Sketch Search</h1>
-    <h2>Skearch?</h2>
+    <div class="center">
+        <h1>Sketch Search</h1>
+        <h2>An AI Powered Image Search Program</h2>
+        <h3>Just sketch something and submit</h3>
+
+        <label for="label select">I am drawing a...</label>
+
+        <select name="label select" id="label select">
+            <option value="house">House</option>
+            <option value="car">Car</option>
+            <option value="tree">Tree</option>
+            <option value="apple">Apple</option>
+            <option value="fish">Fish</option>
+            <option value="clock">Clock</option>
+            <option value="moon">Moon</option>
+            <option value="cloud">Cloud</option>
+        </select>
+        <input type="button" value="Save" id="btn" size="30" onclick="save()">
+        <input type="button" value="Clear" id="clr" size="23" onclick="erase()">
+        <br>
+
+        <canvas id="canvas" width="400" height="400" style="border:8px solid;"></canvas>
+        <br>
+        <img id="canvas img" style="display:none;">
+
+        <br>
+
+        <a href="about.html" target="background">About Page</a>
+    </div>
     <br>
-    <input type="button" value="Save" id="btn" size="30" onclick="save()">
-    <input type="button" value="Clear" id="clr" size="23" onclick="erase()">
-    <br>
-    <canvas id="canvas" width="400" height="400" style="border:8px solid;"></canvas>
-    <br>
-    <img id="canvasimg" style="display:none;">
-    
+    <div>
+
+    </div>
+
 </body>
 
 </html>

@@ -3,17 +3,36 @@ html {
   font-family: 'Andale Mono', monospace;
 }
 
+.center {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+label {
+  font-size: 15px;
+}
 
 h1 {
   font-size: 60px;
   text-align: center;
+  color: #303030;
+  text-shadow: 3px 3px 1px rgb(132, 132, 132);
+  line-height: 20px;
 }
 
-p, li {
-  font-size: 16px;
-  line-height: 2;
-  letter-spacing: 1px;
+h2 {
+  font-size: 25px;
+  text-align: center;
+  line-height: 2px;
 }
+
+h3 {
+  font-size: 15px;
+  text-align: center;
+  line-height: 2px;
+}
+
 
 
 html {
@@ -26,13 +45,6 @@ body {
   background-color: #ffffff;
   padding: 0 20px 20px 20px;
   border: 8px solid rgb(21, 21, 21);
-}
-
-h1 {
-  margin: 0;
-  padding: 20px 0;
-  color: #303030;
-  text-shadow: 3px 3px 1px rgb(132, 132, 132);
 }
 
 img {
