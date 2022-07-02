@@ -1,19 +1,17 @@
-const canvas = document.getElementById("canvas")
-const canvasImg = document.getElementById("canvas img")
-const labelSelect = document.getElementById("label select")
-
+const canvas = document.getElementById("canvas");
+const search = document.getElementById("search result");
+const topResults = document.getElementById("top");
+predictions = null;
+curr_pred = 0
 async function postImage() {
-  // var value = labelSelect.name
-  // console.log(value)
-  var label = labelSelect.options[labelSelect.selectedIndex].value;
-  console.log(label);
+  
+  var dataURL = canvas.toDataURL();
   let data = {
-    Image: canvasImg.src,
-    Label: label
+    Image: dataURL
   };
 
   try {
-    const response = await fetch('/app/API/save_image', { //send png to backend
+    const response = await fetch('/app/API/predict', { //send png to backend
       method: "POST",
       headers: {
         "Content-Type": 'application/json'
@@ -42,6 +40,10 @@ var ctx, flag = false,
 
 var fillcolor = "black";
 
+// var minX, minY, maxX, maxY;
+// const dpi = window.devicePixelRatio;
+
+
 function init() {
   ctx = canvas.getContext("2d");
   w = canvas.width;
@@ -54,16 +56,22 @@ function init() {
     findxy('down', e)
   }, false);
   canvas.addEventListener("mouseup", function (e) {
-    findxy('up', e)
+    findxy('up', e);
+    predict();
   }, false);
   canvas.addEventListener("mouseout", function (e) {
-    findxy('out', e)
+    findxy('out', e);
   }, false);
+  
+  ctx.beginPath();
+  ctx.rect(0, 0, w, h);
+  ctx.fillStyle = "white";
+  ctx.fill();
 }
 
 function draw() {
   ctx.lineCap = 'round';
-  ctx.lineWidth = 8;
+  ctx.lineWidth = 18;
   ctx.beginPath();
   ctx.moveTo(prevX, prevY);
   ctx.lineTo(currX, currY);
@@ -72,27 +80,43 @@ function draw() {
 }
 
 function erase() {
-  // var m = confirm("Would you like to clear the canvas?");
-  // if (m) {
-      ctx.clearRect(0, 0, w, h);
-     canvasImg.style.display = "none";
-  // }
+  ctx.beginPath();
+  ctx.rect(0, 0, w, h);
+  ctx.fillStyle = "white";
+  ctx.fill();
+  canvasImg.style.display = "none";
 }
 
-function save() {
-  canvasImg.style.border = "8px solid";
-  var dataURL = canvas.toDataURL()
-  canvasImg.src = dataURL;
-  canvasImg.style.display = "inline";
+function predict() {
+  var dataURL = canvas.toDataURL();
 
   const jsonPromise = postImage();
   jsonPromise.then((json) => {
-    console.log(json.output)
+    console.log(json.prediction);
+    show_pred(json.prediction);
+    predictions = json.top;
+    var pred_list = predictions[0]
+    for(var i = 1; i < predictions.length; i++) {
+      pred_list += ", " + predictions[i];
+    }
+    topResults.textContent = pred_list;
+    curr_pred = 0;
   });
 }
 
-function findxy(res, e) {
+function show_pred(prediction) {
+  search.src = "https://www.bing.com/images/search?q="+prediction;
+}
 
+function show_next() {
+  if(predictions != null) {
+    curr_pred = (curr_pred+1)%predictions.length;
+    show_pred(predictions[curr_pred])
+  }
+  console.log(predictions)
+}
+
+function findxy(res, e) {
   prevX = currX;
   prevY = currY;
   var rect = canvas.getBoundingClientRect()
