@@ -1,0 +1,180 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+} 
+
+html,
+body { 
+  height: 100%;
+}
+
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1bf2;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px 0 80px;
+  flex-wrap: wrap;
+  position: fixed
+}
+nav .logo, a{
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+  margin-left: -40px;
+  text-shadow: 2px 2px 1px rgb(132, 132, 132);
+}
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li{
+  margin: 0 25px;
+}
+nav ul li a{
+  color: #f2f2f2;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover{
+  color: #111;
+  background: rgb(255, 255, 255);
+}
+
+.content
+{
+  padding-top: 120px;
+}
+
+.app
+{
+  width:100%;
+  margin: 0 auto;
+  color: #303030;
+}
+.app h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #1c1c1c;
+  text-shadow: 2px 2px 1px #5a5a5a;
+  line-height: 100px;
+}
+.app h2 {
+  font-size: 25px;
+  text-align: center;
+  line-height: 30px;
+}
+.app h3 {
+  font-size: 15px;
+  text-align: center;
+  line-height: 20px;
+  padding-bottom: 1.5%;
+}
+.app input {
+  color: rgb(255, 255, 255);
+  background: #111;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.app input:hover{
+  color: #111;
+  background: rgb(255, 255, 255);
+}
+.app iframe {
+  background-color: rgb(255, 255, 255);
+}
+
+.flex-container {
+  width: 95%;
+  margin: auto;
+  display: flex;
+}
+.flex-child {
+  flex: 1;
+}  
+.flex-child:first-child {
+  margin-right: 20px;
+} 
+.flex-child.search-image {
+  flex: 0.1;
+  margin: auto;
+  margin-bottom: 300px;
+}
+.flex-container input{
+  display: block;
+  margin-top: 20px;
+}
+.canvas canvas{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border:8px solid;
+}
+
+.results iframe, p, input{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.results iframe, p{
+  border:8px solid;
+}
+.results p{
+  border:8px solid;
+  background-color: white;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+.results #top-current{
+  color: rgb(255, 255, 255);
+  background: #ff9560;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.info h3,a{
+  font-size: 20px;
+  text-align: left;
+  line-height: 30px;
+  padding-left: 20px;
+}
+.info ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.info ul li{
+  margin: 0 40px;
+}
+
+label {
+  font-size: 15px;
+}
+
+html {
+  background-color: #ff9560;
+  /* background-image: url("../images/orange-unsplash-mirror.jpg"); */
+  background-size: 100% 100%;
+}

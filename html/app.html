@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+    <script src="scripts/main.js" defer></script>
+    <meta charset="UTF-8">
+    <title>Sketch Search</title>
+</head>
+
+<body onload="init()">
+    <nav>
+        <div class="logo">
+            Sketch Search
+        </div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="#">Try the App</a></li>
+            <li><a href="about.html">Contact</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/LLeon360/SketchSearch">GitHub</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <div class="app">
+            <h1>Sketch Search</h1>
+            <h2>An AI Powered Image Search Program</h2>
+            <h3>Just sketch something and submit</h3>
+
+            <div class="flex-container">
+                <div class="flex-child canvas">
+                    <canvas id="canvas" width="500" height="500"></canvas>
+                    <input type="button" value="Clear" id="clr" size="23" onclick="erase()">
+                </div>
+                
+                <div class="flex-child search-image">
+                    <img src="/images/search.png" width="200" height="200">
+                </div>
+
+                <div class="flex-child results">
+                    <iframe id="search result" width="500" height="500" src=""></iframe>
+                    <div class="guesses">
+                        <input type="button" value="Show Next Prediction" id="btn" size="30" onclick="show_next()">
+                        <!-- make this a list  -->
+                        <p>Top Predictions: <span id="top-left"></span><span id="top-current"></span><span id="top-right"></span>  </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="info">
+            <h3>An AI Web App built by <span>Leon Liu</span></h3>
+            <ul>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/LLeon360/">GitHub</a>
+                </li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/leon-liu-2a0446238/">LinkedIn</a>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
