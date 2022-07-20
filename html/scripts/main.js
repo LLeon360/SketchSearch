@@ -1,8 +1,10 @@
 const canvas = document.getElementById("canvas");
 const search = document.getElementById("search result");
-const topResults = document.getElementById("top");
+const topResultsLeft = document.getElementById("top-left");
+const topResultsCurr = document.getElementById("top-current");
+const topResultsRight = document.getElementById("top-right");
 predictions = null;
-curr_pred = 0
+currPred = 0
 async function postImage() {
   
   var dataURL = canvas.toDataURL();
@@ -93,25 +95,42 @@ function predict() {
   const jsonPromise = postImage();
   jsonPromise.then((json) => {
     console.log(json.prediction);
-    show_pred(json.prediction);
+    currPred = 0;
     predictions = json.top;
-    var pred_list = predictions[0]
-    for(var i = 1; i < predictions.length; i++) {
-      pred_list += ", " + predictions[i];
-    }
-    topResults.textContent = pred_list;
-    curr_pred = 0;
+    show_pred(json.prediction);
   });
 }
 
 function show_pred(prediction) {
   search.src = "https://www.bing.com/images/search?q="+prediction;
+  
+  
+  topResultsCurr.textContent = predictions[currPred];
+  var predListLeft = "", predListRight = "";
+  for(var i = 0; i < currPred; i++) {
+    if(i == 0) {
+      predListLeft += predictions[i];
+    }
+    else if(i == currPred-1)
+    {
+      predListLeft += ", " + predictions[i] + ", ";
+    }
+    else {
+      predListLeft += ", " + predictions[i];
+    }
+  }
+  for(var i = currPred+1; i < predictions.length; i++) {
+    predListRight += ", " + predictions[i];
+  }
+  
+  topResultsLeft.textContent = predListLeft;
+  topResultsRight.textContent = predListRight;
 }
 
 function show_next() {
   if(predictions != null) {
-    curr_pred = (curr_pred+1)%predictions.length;
-    show_pred(predictions[curr_pred])
+    currPred = (currPred+1)%predictions.length;
+    show_pred(predictions[currPred])
   }
   console.log(predictions)
 }

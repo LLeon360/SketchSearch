@@ -8,7 +8,8 @@
 } 
 
 html,
-body { height: 100%;
+body { 
+  height: 100%;
 }
 
 nav{
@@ -55,20 +56,20 @@ nav ul li a:hover{
 
 .content
 {
-  padding-top: 140px;
+  padding-top: 120px;
 }
 
 .app
 {
   width:100%;
   margin: 0 auto;
-  /* background-color: #ad5e5e; */
+  color: #303030;
 }
 .app h1 {
   font-size: 60px;
   text-align: center;
-  color: #303030;
-  text-shadow: 2px 2px 1px rgb(132, 132, 132);
+  color: #1c1c1c;
+  text-shadow: 2px 2px 1px #5a5a5a;
   line-height: 100px;
 }
 .app h2 {
@@ -80,7 +81,7 @@ nav ul li a:hover{
   font-size: 15px;
   text-align: center;
   line-height: 20px;
-  padding-bottom: 3%;
+  padding-bottom: 1.5%;
 }
 .app input {
   color: rgb(255, 255, 255);
@@ -113,15 +114,9 @@ nav ul li a:hover{
   margin-right: 20px;
 } 
 .flex-child.search-image {
-  flex: 0.3;
+  flex: 0.1;
   margin: auto;
-  margin-bottom: 340px;
-}
-.flex-child p{
-  font-size: 20px;
-  padding-left: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 300px;
 }
 .flex-container input{
   display: block;
@@ -131,6 +126,7 @@ nav ul li a:hover{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border:8px solid;
 }
 
 .results iframe, p, input{
@@ -138,11 +134,47 @@ nav ul li a:hover{
   margin-left: auto;
   margin-right: auto;
 }
+.results iframe, p{
+  border:8px solid;
+}
+.results p{
+  border:8px solid;
+  background-color: white;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+.results #top-current{
+  color: rgb(255, 255, 255);
+  background: #ff9560;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.info h3,a{
+  font-size: 20px;
+  text-align: left;
+  line-height: 30px;
+  padding-left: 20px;
+}
+.info ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+.info ul li{
+  margin: 0 40px;
+}
 
 label {
   font-size: 15px;
 }
 
 html {
-  background-color: #ffc5a8;
+  background-color: #ff9560;
+  /* background-image: url("../images/orange-unsplash-mirror.jpg"); */
+  background-size: 100% 100%;
 }

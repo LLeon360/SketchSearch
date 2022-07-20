@@ -5,12 +5,12 @@ import base64
 import os
 import tensorflow as tf
 from tensorflow import keras
+import keras
 from keras.layers import Conv2D, MaxPooling2D, Dense, Dropout, Input, Flatten, SeparableConv2D, BatchNormalization, UpSampling2D
-import cv2 #pip install opencv-python
 import numpy as np 
 from PIL import Image #pip install pillow
 
-print(tf.keras.__version__)
+# print(tf.__version__)
 
 app = Flask(__name__)
 
@@ -23,35 +23,7 @@ class_names = f.readlines()
 f.close()
 class_names = [s.strip() for s in class_names]
 
-#load model
-def build_transfer_model(backbone_model, classes):
-  model = keras.Sequential()
-  model.add(Input(shape = (28,28,3)))
-  model.add(UpSampling2D())
-  model.add(UpSampling2D())
-  #backbone model requires minimum size (75,75)
-  backbone_model.trainable = False
-  model.add(backbone_model)
-  model.add(Flatten())
-  model.add(Dense(1536, activation=('relu'), name='dense_1'))
-  model.add(Dense(512, activation=('relu'), name='dense_2'))
-  model.add(Dense(classes, activation=('softmax'), name='dense_3'))
-
-  return model
-
-def create_model():
-    backbone_model = tf.keras.applications.inception_resnet_v2.InceptionResNetV2(include_top=False,
-    weights='imagenet',
-    pooling='avg',
-    input_shape=(112,112,3))
-
-    return build_transfer_model(backbone_model, 100)
-
-# model = create_model()
-# print(model.summary)
-# model.load_weights('model/SketchCNN_100C_InceptionResNetV2.h5')
-
-model = tf.keras.models.load_model('model/cnnmodel.h5')
+model = keras.models.load_model('model/cnnmodel.h5')
 
 @app.route('/predict', methods=['POST', 'GET'])
 def save_image():

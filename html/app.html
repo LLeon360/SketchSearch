@@ -32,7 +32,7 @@
 
             <div class="flex-container">
                 <div class="flex-child canvas">
-                    <canvas id="canvas" width="500" height="500" style="border:8px solid;"></canvas>
+                    <canvas id="canvas" width="500" height="500"></canvas>
                     <input type="button" value="Clear" id="clr" size="23" onclick="erase()">
                 </div>
                 
@@ -44,7 +44,8 @@
                     <iframe id="search result" width="500" height="500" src=""></iframe>
                     <div class="guesses">
                         <input type="button" value="Show Next Prediction" id="btn" size="30" onclick="show_next()">
-                        <p>Top Predictions: <span id="top"></span></p>
+                        <!-- make this a list  -->
+                        <p>Top Predictions: <span id="top-left"></span><span id="top-current"></span><span id="top-right"></span>  </p>
                     </div>
                 </div>
             </div>
@@ -52,7 +53,11 @@
         </div>
 
         <div class="info">
-            <h3>An AI Web App built by Leon Liu</h3>
+            <h3>An AI Web App built by <span>Leon Liu</span></h3>
+            <ul>
+                <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/LLeon360/">GitHub</a>
+                </li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/leon-liu-2a0446238/">LinkedIn</a>
+            </ul>
         </div>
     </div>
 
