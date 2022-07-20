@@ -86,7 +86,6 @@ function erase() {
   ctx.rect(0, 0, w, h);
   ctx.fillStyle = "white";
   ctx.fill();
-  canvasImg.style.display = "none";
 }
 
 function predict() {
