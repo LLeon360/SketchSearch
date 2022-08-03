@@ -45,7 +45,6 @@ var fillcolor = "black";
 // var minX, minY, maxX, maxY;
 // const dpi = window.devicePixelRatio;
 
-
 function init() {
   ctx = canvas.getContext("2d");
   w = canvas.width;

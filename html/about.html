@@ -14,15 +14,84 @@
         <div class="logo">
             Sketch Search
         </div>
-        
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="app.html">Try the App</a></li>
-            <li><a class="active" href="#">Contact</a></li>
-            <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/LLeon360/SketchSearch">GitHub</a></li>
-         </ul>
+            <li><a class="active" href="#">About</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/LLeon360/SketchSearch">GitHub</a>
+            </li>
+        </ul>
     </nav>
 
+    <div class="content">
+        <div class="about">
+            <h1>Deep Learning Powered Image Search</h1>
+            <h2>A novel and fun way to search for images.</h2>
+            <h3>What is it?</h3>
+            <p>
+                Sketch Search uses a deep learning model to classify a
+                user drawing and search for the predicted item. To do this,
+                the model takes the classification and queries online through Bing to 
+                retrieve matching images.
+            </p>
+            <h3>About the Deep Learning AI Model</h3>
+            <p>
+                The deep learning model used is a deep convolutional neural network
+                made up of convolutional layers which each utilize a sliding kernel
+                multiplication on the input to identify specific features. These layers
+                pass their processed output called the feature maps to the next and as
+                the model gets deeper with more layers, the feature maps identify more
+                specific features instead of the broader features. For example, a
+                convolutional neural network may start by identifying edges or circles
+                in early layers and then piece them together to identify a final class
+                later on. The sliding kernel moves across and multiplies with the input
+                image is trained over many epochs on training data of user drawings to
+                determine what weights or values in the kernal work best to identify
+                distinguishing features.
+            </p>
+            <h3>The Training Data</h3>
+            <p>
+                The model is trained using Google's Quick Draw dataset consisting of millions
+                of user drawings of 345 different things (classes) that the model is able
+                to train on to classify. The data is open source <a
+                    href="https://quickdraw.withgoogle.com/data">here</a>.
+                For the model used, the classes were vetted to remove proper nouns for the
+                model to identify general everyday things and spiders were removed in case
+                anyone was arachnophobic. The images used to train the model were also a
+                much smaller subset of the millions of images to make sure training time
+                was short which meant using around 5,000 image per class (type of object).
+            </p>
+            <h3>About Me</h3>
+            <p>
+                Hi! I'm Leon, an aspiring software engineer and enthusiast in all things 
+                programming, deep learning, and AI. This project is a combination of my
+                interests in web development and deep learning to bring a novel and fun application
+                to life for anyone to use. It's inspired by the many cool and amazing web apps online
+                powered by AI such as AI Dungeon which is an amazing fully AI-guided choose your own
+                adventure and AI prompt based art generators such as Wombo Dream. I look forward to
+                working on so much more. <span class="bold">If you want to follow my work, my
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/LLeon360/">GitHub</a> is
+                <a target="_blank" rel="noopener noreferrer"
+                    href="https://github.com/LLeon360/">https://github.com/LLeon360/</a>
+                and this is my
+                <a target="_blank" rel="noopener noreferrer"
+                    href="https://www.linkedin.com/in/leon-liu-2a0446238/">LinkedIn</a>.</span>
+            </p>
+            <h3>Contact Me</h3>
+            <p>
+                If you have any suggestions, feedback, or just want to get in touch: <br>
+                <span class="bold">Reach out at <a href="mailto: leondev360@gmail.com">leondev360@gmail.com</a>! </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="info">
+        <h3>An AI Web App built by <span>Leon Liu</span></h3>
+        <ul>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/LLeon360/">GitHub</a>
+            </li><a target="_blank" rel="noopener noreferrer"
+                href="https://www.linkedin.com/in/leon-liu-2a0446238/">LinkedIn</a>
+        </ul>
+    </div>
 </body>
 
 </html>

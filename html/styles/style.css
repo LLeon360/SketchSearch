@@ -23,7 +23,8 @@ nav{
   flex-wrap: wrap;
   position: fixed
 }
-nav .logo, a{
+nav .logo, 
+nav a{
   color: #fff;
   font-size: 35px;
   font-weight: 600;
@@ -71,17 +72,26 @@ nav ul li a:hover{
   color: #1c1c1c;
   text-shadow: 2px 2px 1px #5a5a5a;
   line-height: 100px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .app h2 {
   font-size: 25px;
   text-align: center;
   line-height: 30px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .app h3 {
   font-size: 15px;
   text-align: center;
   line-height: 20px;
   padding-bottom: 1.5%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .app input {
   color: rgb(255, 255, 255);
@@ -121,6 +131,9 @@ nav ul li a:hover{
 .flex-container input{
   display: block;
   margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .canvas canvas{
   display: block;
@@ -129,12 +142,13 @@ nav ul li a:hover{
   border:8px solid;
 }
 
-.results iframe, p, input{
+.results iframe, 
+.results p{
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-.results iframe, p{
+.results iframe{
   border:8px solid;
 }
 .results p{
@@ -154,11 +168,17 @@ nav ul li a:hover{
   transition: all 0.3s ease;
 }
 
-.info h3,a{
+.info h3{
   font-size: 20px;
+  color: rgb(0, 0, 0);
   text-align: left;
   line-height: 30px;
   padding-left: 20px;
+  padding-top: 50px;
+}
+.info a{
+  font-size: 20px;
+  color: rgb(0, 0, 0);
 }
 .info ul{
   display: flex;
@@ -166,15 +186,68 @@ nav ul li a:hover{
   list-style: none;
 }
 .info ul li{
-  margin: 0 40px;
+  margin: 0 20px;
 }
 
 label {
   font-size: 15px;
 }
 
-html {
-  background-color: #ff9560;
-  /* background-image: url("../images/orange-unsplash-mirror.jpg"); */
-  background-size: 100% 100%;
+body {
+  background-image: linear-gradient(to bottom, #ffb793, #ffa771, #ff9560, #ffa771, #ffa771);
+  background-attachment: fixed;
+}
+
+.about
+{
+  width:100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #303030;
+}
+.about h1 {
+  font-size: 60px;
+  text-align: center;
+  color: #1c1c1c;
+  text-shadow: 2px 2px 1px #5a5a5a;
+  line-height: 100px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about h2 {
+  font-size: 25px;
+  text-align: center;
+  line-height: 30px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.about h3, .about p{
+  font-size: 15px;
+  text-align: left;
+  line-height: 30px;
+  padding-top: 35px;  
+  width: 90%;
+  margin: auto;
+}
+.about input {
+  color: rgb(255, 255, 255);
+  background: #111;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: block;
+}
+.about input:hover{
+  color: #111;
+  background: rgb(255, 255, 255);
+}
+.about .bold{
+  font-size: 17px;
+  color: rgb(0, 0, 0);
 }
