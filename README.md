@@ -3,5 +3,5 @@ This is a web application that allows a user to sketch a doodle to search for a 
 This application can be used for an early learning experience and help with young children's recognition of objects and early development. Otherwise, it's a nifty way to search for images!
 
 The data set used is a subset of Google's quickdraw dataset of 28x28 bitmaps found here: https://github.com/googlecreativelab/quickdraw-dataset 
-
+# Check Out The Web App!
 Site is live @ http://sketchsearch.ml or https://nginx-e2apzbpcwq-uc.a.run.app/
