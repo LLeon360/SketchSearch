@@ -4,4 +4,4 @@ This application can be used for an early learning experience and help with youn
 
 The data set used is a subset of Google's quickdraw dataset of 28x28 bitmaps found here: https://github.com/googlecreativelab/quickdraw-dataset 
 # Check Out The Web App!
-Site is live @ http://sketchsearch.ml or https://nginx-e2apzbpcwq-uc.a.run.app/
+Site is live @ https://nginx-e2apzbpcwq-uc.a.run.app/
